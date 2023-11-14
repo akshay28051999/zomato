@@ -16,5 +16,9 @@ export class MasterService {
     
     return this.http.get("https://freeapi.miniprojectideas.com/api/zomato/GetFoodItemByCategory?categoryId="+id);
   }
+
+  login(obj:any){
+    return this.http.post("https://freeapi.miniprojectideas.com/api/zomato/Login",obj);
+  }
 }
 
