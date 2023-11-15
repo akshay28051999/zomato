@@ -6,6 +6,10 @@ import { Injectable } from '@angular/core';
 })
 export class MasterService {
 
+  cartItems: any ={
+    items : []
+  };
+
   constructor(private http: HttpClient) { }
 
   getAllFoodCategory(){
@@ -19,6 +23,12 @@ export class MasterService {
 
   login(obj:any){
     return this.http.post("https://freeapi.miniprojectideas.com/api/zomato/Login",obj);
+  }
+
+  placeOrder(obj :any){
+
+    return this.http.post("https://freeapi.miniprojectideas.com/api/zomato/AddNewOrder",obj);
+
   }
 }
 
